@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import axios from "axios"
 
-const ResourceList = ({ resource }) => {
+const useResources = resource => {
   const [resources, setResources] = useState([])
 
   // anytime component gets rendered/re-rendered to the screen we run inner function
@@ -14,6 +14,11 @@ const ResourceList = ({ resource }) => {
       setResources(response.data)
     })(resource)
   }, [resource])
+  return resources
+}
+
+const ResourceList = ({ resource }) => {
+  const resources = useResources(resource)
 
   return (
     <ul>
