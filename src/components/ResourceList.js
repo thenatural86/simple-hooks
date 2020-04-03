@@ -14,7 +14,7 @@ const ResourceList = ({ resource }) => {
   // anytime component gets rendered/re-rendered to the screen we run inner function
   useEffect(() => {
     fetchResource(resource)
-  }, [])
+  }, [resource])
 
   return <div>{resources.length}</div>
 }

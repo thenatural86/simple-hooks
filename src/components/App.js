@@ -8,7 +8,8 @@ const App = () => {
   // [resource] = contains the present value of this piece of state - this.state.resource
   // [setResource] = setter function to  call when we update our state and re-render - this.setState({resources: 'posts'})
   // useState = function from react
-  // ('posts') === (initial value) = starting value for this piece of state, similar to when we initialize    out state object - state = {resources: 'posts'}
+  // ('posts') === (initial value) = starting value for this piece of state.
+  //  similar to when we initialize our state object - state = {resources: 'posts'}
   const [resource, setResource] = useState("posts")
 
   console.log(useState)
