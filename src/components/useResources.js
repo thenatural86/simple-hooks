@@ -10,15 +10,25 @@ const useResources = (resource) => {
 
   // make a fetch request inside functional component to get resources
   // also used to update resources
+  // gets called with a function that is ran anytime the component is initially rendered to the screen and anytime the component gets
+  // updated
+  // also gets called with an array as a second argument
   useEffect(() => {
+    // asynchronous network request
+    // resource (state.resource) passed down on props from App
     ;(async (resource) => {
+      // network request saved to response variable
       const response = await axios.get(
         `http://jsonplaceholder.typicode.com/${resource}`
       )
-
+      // call to setResources (setState) function with the response from network request passed in
       setResources(response.data)
+      // asynchronous function immediately invoked with resource argument
     })(resource)
+    // piece of state resource passed in as an array. If resource has different value between renders than the anonymous function that gets passed into useEffect gets called again.
+    // same as if(prevProps.resource !== this.props.resource)
   }, [resource])
+  // return resources piece of state
   return resources
 }
 

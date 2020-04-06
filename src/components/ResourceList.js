@@ -1,12 +1,14 @@
 import React from "react"
 import useResources from "./useResources"
 
+// destructure out resource from props object passed down from from App
+
 const ResourceList = ({ resource }) => {
   const resources = useResources(resource)
 
   return (
     <ul>
-      {resources.map(record => (
+      {resources.map((record) => (
         <li key={record.id}>{record.title}</li>
       ))}
     </ul>
