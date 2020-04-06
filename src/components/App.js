@@ -18,8 +18,10 @@ const App = () => {
     <div>
       <UserList />
       <div>
+        {/* clickhandler that calls the setResource function */}
         <button onClick={() => setResource("posts")}>Posts</button>
         <button onClick={() => setResource("todos")}>Todos</button>
+        {/* pass currently selected resource (piece of component level state) down on props */}
         <ResourceList resource={resource} />
       </div>
     </div>
