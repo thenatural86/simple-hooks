@@ -5,7 +5,7 @@ import useResources from "./useResources"
 
 const ResourceList = ({ resource }) => {
   const resources = useResources(resource)
-
+  // map over resources and render a list of records
   return (
     <ul>
       {resources.map((record) => (
